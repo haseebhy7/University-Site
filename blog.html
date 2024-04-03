@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- for poppins font -->
+    <!-- for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<style>
+
+  
+</style>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="image/logo.png" alt="Logo Image"></a>
+            <div class="nav-links" id="navLinks">
+             <i class="fa fa-window-close" aria-hidden="true" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="aboutus.html">ABOUT</a></li>
+                        <li><a href="course.html">COURSE</a></li>
+                        <li><a href="blog.html">BLOG</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" aria-hidden="true" onclick="showMenu()"></i>
+    
+            </nav>
+        <h1>Our Certificate & Online Programs for 2023</h1>
+    </section>
+
+<!-- blog page content -->
+<section class="blog-content">
+            <div class="row">
+              <div class="blog-left">
+                <img src="image/certificate.jpg" alt="">
+                <h2>Our Certificate & Online Programs for 2023</h2>
+                <p class = "This">At our institution, we are excited to offer a wide range of certificate and online programs for the year 2023. These programs are designed to provide valuable skills and knowledge in various fields.</p>
+                <br>
+                <p class = "This">Whether you are interested in data science, graphic design, web development, or any other field, we have programs that cater to your interests.</p>
+                <br>
+                <p class = "This">Our programs are carefully crafted and taught by industry experts to ensure a high-quality learning experience. We believe in igniting minds and shaping futures, and our certificate and online programs are an integral part of that vision.</p>
+              </div>
+              <div class="blog-right">
+                <h3>Post Categories</h3>
+                <div>
+                  <span>Data Scientist</span>
+                  <span>21</span>
+                </div>
+                <div>
+                  <span>Graphic Design</span>
+                  <span>15</span>
+                </div>
+                <div>
+                  <span>Web Development</span>
+                  <span>12</span>
+                </div>
+                <div>
+                  <span>Digital Marketing</span>
+                  <span>18</span>
+                </div>
+                <div>
+                  <span>UI/UX Design</span>
+                  <span>10</span>
+                </div>
+                <div>
+                  <span>Mobile App Development</span>
+                  <span>9</span>
+                </div>
+                <div>
+                  <span>Artificial Intelligence</span>
+                  <span>14</span>
+                </div>
+                <div>
+                  <span>Data Analysis</span>
+                  <span>16</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="blog-left comment-box">
+                <h3>Leave a Comment</h3>
+                <form action="" class="comment-form">
+                  <input type="text" placeholder="Enter Your Name">
+                  <input type="text" placeholder="Enter Your Email">
+                  <textarea name="" id="textarea" cols="0" rows="5" placeholder="Enter Your Comment"></textarea>
+                  <button class="herobtn3 hero-btn">POST COMMENT</button>
+                </form>
+              </div>
+            </div>
+          </section>
+          
+
+
+
+
+
+
+
+
+ 
+    <!-- FOOTER -->
+<section class="FOOTER">
+    <h4 class="Notworking">ABOUT US</h4>
+    <p>Igniting minds. Shaping futures. Our institution is a beacon of academic excellence, where students unlock their potential and embark on a transformative journey. </p>
+    <div class="icons">
+        <i class="fab fa-facebook" aria-hidden="true"></i>
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+    </div>
+</section>
+ <script>
+    // JavaScript for Menu toggle
+var navLinks = document.getElementById("navLinks");
+var menuIcon = document.querySelector(".fa-bars");
+var closeIcon = document.querySelector(".fa-window-close");
+
+function showMenu() {
+  navLinks.style.right = "0";
+}
+
+function hideMenu() {
+  navLinks.style.right = "-200px";
+}
+
+menuIcon.addEventListener("click", showMenu);
+closeIcon.addEventListener("click", hideMenu);
+ // for animation
+ window.addEventListener('scroll', function() {
+    const section = document.querySelector('.course');
+    const sectionPosition = section.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (sectionPosition < screenHeight / 1.3) {
+        section.classList.add('fade-in');
+    }
+});
+// Select the target element
+const section = document.querySelector('.facilities');
+
+// Create a new intersection observer instance
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // Add the fade-in class when the section comes into view
+      section.classList.add('fade-in');
+    }
+  });
+});
+
+// Start observing the target element
+observer.observe(section);
+
+
+</script>
+</body>
+</html>

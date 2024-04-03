@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- for poppins font -->
+    <!-- for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<style>
+     .facilities {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+  }
+  
+  .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+</style>
+</head>
+<body>
+    <section class="sub-header">
+     <nav>
+            <a href="index.html"><img src="image/logo.png" alt="Logo Image"></a>
+            <div class="nav-links" id="navLinks">
+             <i class="fa fa-window-close" aria-hidden="true" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="aboutus.html">ABOUT</a></li>
+                        <li><a href="course.html">COURSE</a></li>
+                        <li><a href="blog.html">BLOG</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" aria-hidden="true" onclick="showMenu()"></i>
+    
+            </nav>
+        <h1>Our Courses</h1>
+    </section>
+
+    <section id = "course-section" class="course">
+        <h1>Courses We Offer</h1>
+        <p class="sub-text">Explore our diverse range of academic programs.</p>
+    
+        <div class="row">
+            <div class="course-col">
+                <h3>Intermediate</h3>
+                <p>Build a strong foundation and prepare for advanced studies with our comprehensive intermediate courses.</p>
+            </div>
+            <div class="course-col">
+                <h3>Degree</h3>
+                <p>Elevate your knowledge and skills with our undergraduate degree programs that open doors to endless opportunities.</p>
+            </div>
+            <div class="course-col">
+                <h3>Post Graduation</h3>
+                <p>Specialize in your field and take your career to new heights through our advanced postgraduate programs.</p>
+            </div>
+        </div>
+    </section>
+    <!-- FACILITIES -->
+<section id ="facilities-section" class="facilities">
+    <h1>Our Facilities</h1>
+    <p class="facilities-subtext">Experience state-of-the-art amenities designed to enhance your learning journey.</p>
+    <div class="facilities-row">
+        <div class="facilities-col">
+            <img src="image/library.png" alt="">
+            <h3>World Class library</h3>
+            <p>Immerse yourself in a vast collection of knowledge and resources, fueling your intellectual growth.</p>
+        </div>
+        <div class="facilities-col">
+            <img src="image/basketball.png" alt="">
+            <h3>Largest PlayGround</h3>
+            <p>Unleash your energy and indulge in a variety of sports and recreational activities in our expansive playground.</p>
+        </div>
+        <div class="facilities-col">
+            <img src="image/cafeteria.png" alt="">
+            <h3>Tasty and Healthy Food</h3>
+            <p>Delight your taste buds with a wide range of delicious and nutritious meals prepared with care and freshness.</p>
+        </div>
+    </div>
+</section>
+
+ 
+    <!-- FOOTER -->
+<section class="FOOTER">
+    <h4 class="Notworking">ABOUT US</h4>
+    <p>Igniting minds. Shaping futures. Our institution is a beacon of academic excellence, where students unlock their potential and embark on a transformative journey. </p>
+    <div class="icons">
+        <i class="fab fa-facebook" aria-hidden="true"></i>
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+    </div>
+</section>
+ <script>
+    // JavaScript for Menu toggle
+var navLinks = document.getElementById("navLinks");
+var menuIcon = document.querySelector(".fa-bars");
+var closeIcon = document.querySelector(".fa-window-close");
+
+function showMenu() {
+  navLinks.style.right = "0";
+}
+
+function hideMenu() {
+  navLinks.style.right = "-200px";
+}
+
+menuIcon.addEventListener("click", showMenu);
+closeIcon.addEventListener("click", hideMenu);
+ // for animation
+ window.addEventListener('scroll', function() {
+    const section = document.querySelector('.course');
+    const sectionPosition = section.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (sectionPosition < screenHeight / 1.3) {
+        section.classList.add('fade-in');
+    }
+});
+// Select the target element
+const section = document.querySelector('.facilities');
+
+// Create a new intersection observer instance
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // Add the fade-in class when the section comes into view
+      section.classList.add('fade-in');
+    }
+  });
+});
+
+// Start observing the target element
+observer.observe(section);
+
+
+</script>
+</body>
+</html>
